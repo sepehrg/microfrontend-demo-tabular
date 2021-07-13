@@ -1,0 +1,46 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <main style="height: 100%">
+    <!-- <redirect from="/" to="/login"></redirect> -->
+    <route path="main">
+      <header>header</header>
+      <side>
+        <application name="@prolab/navbar"></application>
+      </side>
+      <application name="@prolab/main"></application>
+    </route>
+    <route path="main/identity">
+      <application name="@prolab/identity"></application>
+    </route>
+    <route path="main/tse">
+      <application name="@prolab/tse"></application>
+    </route>
+    <!-- <route path="identity">
+      <application name="@prolab/identity"></application>
+    </route> -->
+    <route default>
+      <application name="@prolab/login"></application>
+    </route>
+    <!-- <route default>
+      <application name="@prolab/login"></application>
+    </route> -->
+  </main>
+</single-spa-router>
+<div id="main2"></div>
